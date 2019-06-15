@@ -33,7 +33,7 @@ public class CacheServiceImpl implements CacheService {
     }
 
     @Override
-    @Cacheable(cacheNames = "${id}")
+    @Cacheable(keyGenerator = "key_gen", value = "person")
     public Person getById(Long id) {
         log.info("查找id=" + id);
         return map.get(id);
