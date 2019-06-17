@@ -91,6 +91,12 @@ public class MyRedisCacheConfig extends CachingConfigurerSupport {
         return cacheManager;
     }
 
+    /**
+     * @description:设置redis序列化格式
+     *
+     * @author jianhua.luo
+     * @date 2019/6/17
+     */
     public Jackson2JsonRedisSerializer jackson2JsonRedisSerializer(){
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
         ObjectMapper om = new ObjectMapper();
