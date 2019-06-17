@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
  * @author jianhua.luo
  * @date 2019/6/15
  */
-@Component
+//@Component
 @Slf4j
 public class MyCustomCache implements Cache {
 

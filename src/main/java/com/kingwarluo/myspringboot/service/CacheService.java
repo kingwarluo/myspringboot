@@ -14,7 +14,7 @@ public interface CacheService {
 
     public Person getById(Long id);
 
-    public void insert(Long id, String name);
+    public Person insert(Long id, String name);
 
     public int deleteById(Long id);
 

@@ -13,20 +13,20 @@ import java.lang.reflect.Method;
  * @author jianhua.luo
  * @date 2019/6/15
  */
-@Configuration
-@Component("key_gen")
+//@Configuration
+//@Component("key_gen")
 @Slf4j
 public class CacheKey implements KeyGenerator {
 
     @Override
     public Object generate(Object o, Method method, Object... objects) {
         StringBuilder sb = new StringBuilder();
-        sb.append(o.getClass().getSimpleName())
-                .append("_")
-                .append(method.getName())
-                .append("_")
-                .append(objects[0]);
-        log.info("cache_key:" + sb.toString());
+//        sb.append(o.getClass().getSimpleName())
+//                .append("_")
+//                .append(method.getName())
+//                .append("_")
+//                .append(objects[0]);
+//        log.info("cache_key:" + sb.toString());
         return sb.toString();
     }
 

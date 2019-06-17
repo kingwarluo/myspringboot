@@ -12,7 +12,7 @@ import java.util.Collection;
  * @author jianhua.luo
  * @date 2019/6/15
  */
-@Component
+//@Component
 public class MyCacheManager implements CacheManager {
 
     @Override

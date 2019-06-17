@@ -14,10 +14,10 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @author jianhua.luo
  * @date 2019/6/15
  */
-@Configuration
+//@Configuration
 public class MyRedisConfig {
 
-    @Bean("redisTemplate")
+//    @Bean("redisTemplate")
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<String, Object> redisTemplate = new RedisTemplate<String, Object>();
         //设置各种数据类型的序列化方式
