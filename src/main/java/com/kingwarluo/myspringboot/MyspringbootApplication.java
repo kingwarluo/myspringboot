@@ -15,7 +15,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 //开启注解缓存
 @EnableCaching
 //启用spring-session,30分钟过期
-@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 30 * 60 * 60)
+@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 30 * 60)
 public class MyspringbootApplication {
 
     public static void main(String[] args) {
