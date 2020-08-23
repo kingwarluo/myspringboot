@@ -1,9 +1,10 @@
 package com.kingwarluo.myspringboot;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 
 /**
  * @description:应用启动类
@@ -11,11 +12,9 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
  * @author jianhua.luo
  * @date 2019/6/15
  */
-@SpringBootApplication
-//开启注解缓存
-@EnableCaching
-//启用spring-session,30分钟过期
-@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 30 * 60)
+@SpringBootApplication(
+    exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class}
+)
 public class MyspringbootApplication {
 
     public static void main(String[] args) {
