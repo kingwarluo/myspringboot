@@ -17,13 +17,18 @@ public class UserController {
 
     @RequestMapping("queryAllUser")
     @ResponseBody
-    public List<User> queryAllUser(Long id) {
+    public List<User> queryAllUser() {
         return userService.queryAllUser();
     }
 
-    @RequestMapping("getUserById")
-    public User getUserById(Long id) {
-        return new User();
+    @RequestMapping(value = "updateById")
+    public void getUserById(String name) {
+        User user = new User();
+        user.setId(1L);
+        user.setName(name);
+        user.setMobile("15659455896");
+
+        userService.updateById(user);
     }
 
 }

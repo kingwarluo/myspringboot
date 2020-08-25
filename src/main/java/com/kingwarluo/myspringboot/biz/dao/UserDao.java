@@ -10,4 +10,6 @@ public interface UserDao {
 
     List<User> queryAllUser();
 
+    int updateById(User user);
+
 }
