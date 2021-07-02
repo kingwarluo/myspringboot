@@ -31,6 +31,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
             }
             interceptor.setNoLoginUrls(noLoginUrlSet);
         }
-        registry.addInterceptor(interceptor);
+        //registry.addInterceptor(interceptor);
     }
 }

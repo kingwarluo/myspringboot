@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to nginx!</title>
+    <style>
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        var source;
+
+        function stop() {
+            console.log(source)
+            source.close();
+        }
+
+        function start() {
+            if(typeof(EventSource)!=="undefined") {   //判断是否支持EventSource
+                source = new EventSource('sse/pushMess'); //为http://localhost:8080/sse/pushMess
+                source.addEventListener('message', function (e) {
+                    console.log('message:',e)
+                })
+                source.addEventListener('open', function (e) {
+                    console.log('open:', e)
+                })
+                source.addEventListener('error', function (e) {
+                    console.log('error:', e)
+                })
+                source.addEventListener('specially', function (e) {
+                    console.log('specially:', e)
+                })
+            }
+        }
+    </script>
+
+    <button onclick="start()">开始</button>
+    <button onclick="stop()">停止</button>
+</body>
+</html>
